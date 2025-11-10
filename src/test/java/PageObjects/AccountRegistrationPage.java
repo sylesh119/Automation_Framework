@@ -28,5 +28,14 @@ public class AccountRegistrationPage extends BasePage {
 	public void setFirstname(String fname) {
 		txtFirstname.sendKeys(fname);
 	}
+	
+	public void setLastname(String lname) {
+		txtLastname.sendKeys(lname);
+	}
+	
+	public void setemail(String email)
+	{
+		txtEmail.sendKeys(email);
+	}
 
 }
