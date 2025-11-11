@@ -37,5 +37,10 @@ public class AccountRegistrationPage extends BasePage {
 	{
 		txtEmail.sendKeys(email);
 	}
+	
+	public void setPassword(String pwd)
+	{
+		txtPassword.sendKeys(pwd);
+	}
 
 }
