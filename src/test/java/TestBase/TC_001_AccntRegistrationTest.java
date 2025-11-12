@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import PageObjects.AccountRegistrationPage;
 import PageObjects.Homepage;
 
 public class TC_001_AccntRegistrationTest {
@@ -36,6 +37,36 @@ public class TC_001_AccntRegistrationTest {
 		Homepage hp=new Homepage(driver);
 		hp.clickMyaccount();
 		hp.clickRegister();
+		
+		AccountRegistrationPage accreg=new AccountRegistrationPage(driver);
+		accreg.setFirstname("bbc");
+		accreg.setLastname("xrz");
+		accreg.setemail("abcxy12@gmail.com");
+		accreg.setPhoneNumber("12398234");
+		accreg.setPassword("xyx@123");
+		accreg.setconfirmpwd("xyx@123");
+		accreg.setprivacy();
+		accreg.clickContinue();
+		
+		
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
