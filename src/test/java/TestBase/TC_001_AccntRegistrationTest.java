@@ -2,8 +2,10 @@ package TestBase;
 
 import java.time.Duration;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -39,17 +41,22 @@ public class TC_001_AccntRegistrationTest {
 		hp.clickRegister();
 		
 		AccountRegistrationPage accreg=new AccountRegistrationPage(driver);
-		accreg.setFirstname("bbc");
-		accreg.setLastname("xrz");
-		accreg.setemail("abcxy12@gmail.com");
+		accreg.setFirstname(Randomstring());
+		accreg.setLastname(Randomstring());
+		accreg.setemail(Randomstring()+"@gmail.com");
 		accreg.setPhoneNumber("12398234");
 		accreg.setPassword("xyx@123");
 		accreg.setconfirmpwd("xyx@123");
-		accreg.setprivacy();
+		accreg.setprivacy(); 
 		accreg.clickContinue();
+		String conmsg = accreg.getConfirmedMsg();
 		
+		Assert.assertEquals(conmsg, "Your Account Has Been Created!");
 		
-		
+	}
+	public String Randomstring() {
+		String generatedString = RandomStringUtils.randomAlphabetic(5);
+		return generatedString;
 	}
 
 }

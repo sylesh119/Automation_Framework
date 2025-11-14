@@ -27,11 +27,14 @@ public class AccountRegistrationPage extends BasePage {
 
 	@FindBy(xpath = "//input[@id='input-confirm']")
 	WebElement txtconpassword;
-	
-	@FindBy(xpath = "//input[@id='input-confirm']")
-	WebElement ckdpolicy;
 
 	@FindBy(xpath = "//input[@name='agree']")
+	WebElement ckdpolicy;
+
+	@FindBy(xpath = "//h1[normalize-space()='Your Account Has Been Created!']")
+	WebElement confirmMsg;
+
+	@FindBy(xpath = "//input[@value='Continue']")
 	WebElement btnContinue;
 
 	public void setFirstname(String fname) {
@@ -57,13 +60,35 @@ public class AccountRegistrationPage extends BasePage {
 	public void setconfirmpwd(String conpwd) {
 		txtconpassword.sendKeys(conpwd);
 	}
-	
+
 	public void setprivacy() {
 		ckdpolicy.click();
 	}
-	
+
 	public void clickContinue() {
 		btnContinue.click();
+	}
+
+//	public String ConfirmedMsg(String msg) {
+//		try {
+//			String actualvalue = confirmMsg.getText();
+//			if (msg.equals(actualvalue)) {
+//				System.out.println("actual value matched with expected value");
+//			}
+//			return actualvalue;
+//
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//			return "Exception Thrown";
+//		}
+//	}
+	public String getConfirmedMsg() {
+		try {
+			String actual = confirmMsg.getText();
+			return actual;
+		} catch (Exception e) {
+			return (e.getMessage());
+		}
 	}
 
 }
