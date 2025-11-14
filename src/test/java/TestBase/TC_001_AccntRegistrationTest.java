@@ -60,8 +60,8 @@ public class TC_001_AccntRegistrationTest {
 	}
 	
 	public String RandomNumber() {
-		String generatedString = RandomStringUtils.randomNumeric(10);
-		return generatedString;
+		String generatedNumber = RandomStringUtils.randomNumeric(10);
+		return generatedNumber;
 	}
 
 }
