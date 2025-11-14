@@ -41,8 +41,8 @@ public class TC_001_AccntRegistrationTest {
 		hp.clickRegister();
 		
 		AccountRegistrationPage accreg=new AccountRegistrationPage(driver);
-		accreg.setFirstname(Randomstring());
-		accreg.setLastname(Randomstring());
+		accreg.setFirstname(Randomstring().toUpperCase());
+		accreg.setLastname(Randomstring().toUpperCase());
 		accreg.setemail(Randomstring()+"@gmail.com");
 		accreg.setPhoneNumber("12398234");
 		accreg.setPassword("xyx@123");
@@ -58,6 +58,8 @@ public class TC_001_AccntRegistrationTest {
 		String generatedString = RandomStringUtils.randomAlphabetic(5);
 		return generatedString;
 	}
+	
+	
 
 }
 
