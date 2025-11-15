@@ -45,8 +45,9 @@ public class TC_001_AccntRegistrationTest {
 		accreg.setLastname(Randomstring().toUpperCase());
 		accreg.setemail(Randomstring()+"@gmail.com");
 		accreg.setPhoneNumber(RandomNumber());
-		accreg.setPassword("xyx@123");
-		accreg.setconfirmpwd("xyx@123");
+		String Password=RandomAlphaNumeric();
+		accreg.setPassword(Password);
+		accreg.setconfirmpwd(Password);
 		accreg.setprivacy(); 
 		accreg.clickContinue();
 		String conmsg = accreg.getConfirmedMsg();
@@ -63,7 +64,12 @@ public class TC_001_AccntRegistrationTest {
 		String generatedNumber = RandomStringUtils.randomNumeric(10);
 		return generatedNumber;
 	}
-
+	
+	public String RandomAlphaNumeric() {
+		String generatedString = RandomStringUtils.randomAlphabetic(4);
+		String generatedNumber = RandomStringUtils.randomNumeric(3);
+		return (generatedString+generatedNumber);
+	}
 }
 
 
