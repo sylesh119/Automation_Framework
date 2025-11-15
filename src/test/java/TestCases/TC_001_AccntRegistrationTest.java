@@ -1,9 +1,10 @@
-package TestBase;
+package TestCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import PageObjects.AccountRegistrationPage;
 import PageObjects.Homepage;
+import TestBase.BaseClass;
 
 public class TC_001_AccntRegistrationTest extends BaseClass{
 	
@@ -22,12 +23,15 @@ public class TC_001_AccntRegistrationTest extends BaseClass{
 		accreg.setPhoneNumber(RandomNumber());
 		String Password=RandomAlphaNumeric();
 		accreg.setPassword(Password);
+		logger.info("password is entered succesfully");
 		accreg.setconfirmpwd(Password);
 		accreg.setprivacy(); 
 		accreg.clickContinue();
+		logger.info("clicked on continue");
 		String conmsg = accreg.getConfirmedMsg();
 		
 		Assert.assertEquals(conmsg, "Your Account Has Been Created!");
+		logger.info("test case TC_001_AccntRegistrationTest passed successfully ");
 		
 	}
 	
