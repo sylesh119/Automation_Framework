@@ -9,7 +9,7 @@ import TestBase.BaseClass;
 public class TC_001_AccntRegistrationTest extends BaseClass{
 	
 	
-	@Test
+	@Test(groups={"Regression", "Master"})
 	public void verify_account_registartion()
 	{
 		Homepage hp=new Homepage(driver);

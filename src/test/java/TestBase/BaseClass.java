@@ -23,7 +23,7 @@ public class BaseClass {
 	public Logger logger;
 	public Properties prop;
 
-	@BeforeClass
+	@BeforeClass(groups= {"Regression", "Sanity", "Master", })
 	@Parameters({ "os", "browser" })
 	public void setup(String os, String br) throws IOException {
 		
@@ -53,7 +53,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 
-	@AfterClass
+	@AfterClass(groups= {"Regression", "Sanity", "Master", })
 	public void Teardown() {
 		driver.quit();
 	}

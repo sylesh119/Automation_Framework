@@ -10,7 +10,7 @@ import TestBase.BaseClass;
 
 public class TC_002_LoginTest extends BaseClass {
 
-	@Test
+	@Test(groups={"Sanity", "Master"})
 	public void verifyLogin() {
 		logger.info("statring test case");
 		try {

@@ -10,7 +10,7 @@ import TestBase.BaseClass;
 import Utilities.DataProviders;
 
 public class TC_003_LoginDDT extends BaseClass {
-	@Test(dataProvider = "LoginData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "LoginData", dataProviderClass = DataProviders.class, groups="Datadriven")
 	public void LoginTestDDT(String email, String pwd, String exp) {
 		try {
 			Homepage hp = new Homepage(driver);
