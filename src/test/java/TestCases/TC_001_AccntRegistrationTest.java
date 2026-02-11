@@ -15,7 +15,6 @@ public class TC_001_AccntRegistrationTest extends BaseClass{
 		Homepage hp=new Homepage(driver);
 		hp.clickMyaccount();
 		hp.clickRegister();
-		// first
 		AccountRegistrationPage accreg=new AccountRegistrationPage(driver);
 		accreg.setFirstname(Randomstring().toUpperCase());
 		accreg.setLastname(Randomstring().toUpperCase());
@@ -29,7 +28,6 @@ public class TC_001_AccntRegistrationTest extends BaseClass{
 		accreg.clickContinue();
 		logger.info("clicked on continue");
 		String conmsg = accreg.getConfirmedMsg();
-		
 		Assert.assertEquals(conmsg, "Your Account Has Been Created!");
 		logger.info("test case TC_001_AccntRegistrationTest passed successfully ");
 		
