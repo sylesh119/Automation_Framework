@@ -15,7 +15,7 @@ public class TC_001_AccntRegistrationTest extends BaseClass{
 		Homepage hp=new Homepage(driver);
 		hp.clickMyaccount();
 		hp.clickRegister();
-		
+		// first
 		AccountRegistrationPage accreg=new AccountRegistrationPage(driver);
 		accreg.setFirstname(Randomstring().toUpperCase());
 		accreg.setLastname(Randomstring().toUpperCase());
